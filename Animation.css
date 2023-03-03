@@ -64,3 +64,16 @@
     opacity: 0;
   }
 }
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  transition: 1s ease-in;
+  opacity: 0;
+}

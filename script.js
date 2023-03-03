@@ -20,6 +20,12 @@ const observer = new IntersectionObserver(entries => {
 
       element.style.animation = animationRules;
       observer.unobserve(element);
+
+      element.addEventListener('animationend', function(event) {
+        if (event.animationName === 'fade-out') {
+          element.remove();
+        }
+      });
     }
   });
 });
