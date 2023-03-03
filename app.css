@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
+:root {
+  --primary-color: #6b705c;
+  --secondary-color: #a5a58d;
+  --dark-color: #002240;
+  --text-color: #cb997e;
+  --success-color: #5cb85c;
+  --error-color: #d9534f;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+h1,
+h2 {
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 10px 0;
+}
+
+p {
+  margin: 10px 0;
+}
+
+img {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Navbar */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  height: 100vh;
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+.container {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  /* CSS Smooth Scroll */
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+.lead {
+  font-size: 1.5rem;
+}
+
+li {
+  margin-top: 100px;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+li a {
+  background-color: #002240;
+  padding: 20px 40px;
+  border-radius: 20px;
+  transition: 0.8s;
+}
+
+li a:hover {
+  transition: 0.8s;
+  padding: 30px 50px;
+  color: skyblue;
+  background-color: #033e72;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  /* Scroll Snap */
+  scroll-snap-align: center;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  /* Scroll Snap */
+  scroll-snap-align: center;
+}
+.box2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  /* Scroll Snap */
+  scroll-snap-align: center;
+}
+
+section h1 {
+  font-size: 4rem;
+}
+
+.hide {
+  opacity: 0;
+}
+
+section span {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.top,
+.bot {
+  background-color: #002240;
+  width: 100%;
+  height: 400px;
+  position: absolute;
+}
+
+.top {
+  top: 0;
+}
+
+.bot {
+  bottom: 0;
+}
+
+/* Section Images */
+#section1 {
+  background-color: var(--primary-color);
+}
+
+#section2 {
+  background-color: var(--error-color);
+}
+
+#section3 {
+  background-color: var(--dark-color);
+}
+
+#section4 {
+  background-color: var(--text-color);
+}
