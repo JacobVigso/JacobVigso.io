@@ -33,3 +33,4 @@ const observer = new IntersectionObserver(entries => {
 animationElements.forEach(element => {
   observer.observe(element);
 });
+

@@ -4,6 +4,12 @@
 
 .absolute {
   position: absolute;
+  top: 20rem;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%; /* Need a specific value to work */
 }
 
 @keyframes bounce {
@@ -41,6 +47,10 @@
   to {
     opacity: 1;
   }
+}
+
+.fade-in {
+  animation: fade-in 2s ease;
 }
 
 @keyframes slide-in-from-left {
