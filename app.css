@@ -660,6 +660,10 @@ section span {
   padding-bottom: 20px;
 }
 
+.personal-blog .header {
+  width: 100%;
+}
+
 .personal-blog .container-fluid {
   position: relative;
 
@@ -729,7 +733,7 @@ section span {
 
 .personal-blog .grid {
   border-bottom: 1px solid #1e252d6d;
-  max-height: 350px;
+  max-height: 339px;
 }
 
 .personal-blog .grid .grid-title,
@@ -738,9 +742,9 @@ section span {
   margin-right: 30px;
 }
 
-.personal-blog img {
+.personal-blog .grid img {
   width: 90%;
-  max-height: 339;
+  max-height: 339px;
 }
 
 .img-float-left {
