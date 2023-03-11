@@ -84,7 +84,7 @@ body {
   width: 100%;
   height: 100%;
   /* CSS Smooth Scroll */
-  overflow-y: scroll;
+  overflow-y: hidden;
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
 }
@@ -123,6 +123,18 @@ button a:hover {
 
 /*First section*/
 
+#section1 {
+  background-color: var(--primary-color);
+}
+
+#section1 h1:first-child{
+ padding-top: 100px;
+}
+
+#section1 button {
+  margin-top: 100px;
+}
+
 section {
   display: flex;
   flex-direction: column;
@@ -133,6 +145,7 @@ section {
   height: 100%;
   position: relative;
   /* Scroll Snap */
+  
 }
 
 
@@ -171,15 +184,18 @@ section span {
   margin-top: 20rem;
 }
 
+
+
 /* Nav */
 
+
 .container-nav {
-  height: 100vh;
+  max-height: 100vh;
   width: 400px;
   overflow: hidden;
   position: fixed;
-  left: 0;
   top: -30px;
+  left: 0;
 }
 
 .nav {
@@ -658,10 +674,6 @@ section span {
   margin-top: -10px;
   height: 100%;
   padding-bottom: 20px;
-}
-
-.personal-blog .header {
-  width: 100%;
 }
 
 .personal-blog .container-fluid {
@@ -1262,10 +1274,7 @@ section span {
 }
 
 /* Section Images */
-#section1 {
-  background-color: var(--primary-color);
 
-}
 
 #section2 {
   position: relative;

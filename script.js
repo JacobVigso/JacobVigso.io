@@ -662,3 +662,30 @@ $(document).ready(function () {
   // Call the initNavbarCollapse function on document ready
   initNavbarCollapse();
 });
+
+function removeOverflow() {
+  var elements = document.getElementsByClassName("container-own");
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].style.overflowY = "scroll";
+  }
+}
+
+// Define a unique event handler function
+function handleScrollForContainerNav() {
+  var containerNavs = document.querySelectorAll('.container-nav');
+  var scrollPosition = window.scrollY;
+
+  containerNavs.forEach(function(containerNav) {
+    if (scrollPosition >= window.innerHeight) {
+      containerNav.style.position = 'fixed';
+      containerNav.style.left = '0';
+      containerNav.style.top = '-30px';
+    } else {
+      containerNav.style.position = 'static';
+    }
+  });
+}
+
+// Add the event listener using the unique function name
+window.addEventListener('scroll', handleScrollForContainerNav);
+
