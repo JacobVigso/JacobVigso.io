@@ -322,6 +322,7 @@ function revertContent() {
   `;
   initCarousel(); // Initialize the carousel on page load
   initCardCount();
+  initNavbarCollapse();
 }
 
 const change2pageBtn = document.getElementById("change-2page-btn");
@@ -334,21 +335,18 @@ function changeContent() {
   <div class="page2">
               
    <div class="header">
-      <div class="grid">
-        <div class="grid1">
-          <h2>VAST Festival</h2>
-         <p>
-        VAST is an annual festival that brings together people 
-        from all walks of life to celebrate the joy of living. 
-        This vibrant event is a true feast for the senses, 
-        featuring an array of music, art, food, 
-        and cultural experiences that are sure to delight and inspire.
-        </p>
+      <div class="hero">
+        <div class="hero-text">
+            <h2>VAST Festival</h2>
+           <p>
+           VAST is an annual festival that brings together people 
+           from all walks of life to celebrate the joy of living. 
+           This vibrant event is a true feast for the senses, 
+            featuring an array of music, art, food, 
+           and cultural experiences that are sure to delight and inspire.
+           </p>
+        </div> 
       </div>
-      <div class="grid1">
-        <img src="/Images/pexels-wendy-wei-1540406.jpg">
-      </div>
-  </div>
   <div class="card-section">
   <div class="card-own card-big"> 
   
@@ -396,6 +394,7 @@ function changeContent() {
   `;
   initCarousel(); // Initialize the carousel on page load
   initCardCount();
+  initNavbarCollapse();
 }
 
 const change3pageBtn = document.getElementById("change-3page-btn");
@@ -405,93 +404,217 @@ change3pageBtn.addEventListener("click", Page3Content);
 function Page3Content() {
   const brandingDiv = document.querySelector(".main-content");
   brandingDiv.innerHTML = `
-  <div class="page3">
-              
-  <div class="branding">
-    <h1>Products</h1>
-    <div class="grid">
-      <div class="grid1">
-        <h2>Branding</h2>
-        <p>Need a powerful brand for your product? We're here to create the image you need
-        </p>
-      </div>
-      <div class="grid1">
-        <h2>Branding</h2>
-        <p>Need a powerful brand for your product? We're here to create the image you need
-        </p>
-      </div>
-      <div class="grid1">
-        <h2>Branding</h2>
-        <p>Need a powerful brand for your product? We're here to create the image you need
-        </p>
-      </div>
-      <div class="grid1">
-        <h2>Branding</h2>
-        <p>Need a powerful brand for your product? We're here to create the image you need
-        </p>
-      </div>
-    </div>
-  </div>
-  <div id="product-carousel" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="product-item">
-            <img src="product1.jpg" alt="Product 1">
-            <div class="overlay">
-              <h3>Product 1</h3>
-              <p>A short description of Product 1.</p>
+  <div class="personal-blog">
+            <div class="header">
+              <div class="container-fluid p-0">
+                <img class="img-fluid" src="/Images/header-Blog.jpg" alt="" />
+                <div class="text-center overlay-text">
+                  <div class="grid-title">
+                    <h1>The Wonders of Exploring Off the Beaten Path</h1>
+                  </div>
+                  <div class="grid-text">
+                    <p>
+                      While popular tourist destinations can be exciting and
+                      offer a lot to see and do, there is something special
+                      about venturing off the beaten path and discovering new
+                      and less-traveled places. Exploring hidden gems can
+                      provide a unique perspective, offer unexpected
+                      experiences, and give you a sense of adventure.
+                    </p>
+                  </div>
+                  <a href="#" class="btn btn-primary btn-lg">Learn More</a>
+                </div>
+              </div>
+            </div>
+            <div class="grid">
+              <div class="grid-left text-left">
+                <div class="grid-title">
+                  <h2>
+                    Discovering Hidden Gems: Off the Beaten Path Destinations
+                  </h2>
+                </div>
+                <div class="grid-text">
+                  <p>
+                    Destinations can be found in almost any region of the world,
+                    from remote islands to tiny villages, from rugged mountain
+                    ranges to dense forests. By stepping outside your comfort
+                    zone and traveling to lesser-known destinations, you might
+                    discover natural wonders, ancient ruins, charming cultures,
+                    and fascinating histories that you might not have otherwise
+                    known about.
+                  </p>
+                </div>
+              </div>
+              <div class="grid-right">
+                <img
+                  class="img-float-right"
+                  src="/Images/spotlight02.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="grid">
+              <div class="grid-left">
+                <img
+                  class="img-float-left"
+                  src="/Images/spotlight03.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="grid-right">
+                <div class="grid-title">
+                  <h2>The Rewards of Traveling Off the Beaten Path</h2>
+                </div>
+                <div class="grid-text">
+                  <p>
+                    While it may require a bit of extra planning and research,
+                    the rewards of exploring off the beaten path are
+                    immeasurable. You may find yourself in awe of the natural
+                    beauty around you, connect with locals in a deeper and more
+                    meaningful way, and create memories that will last a
+                    lifetime.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="grid">
+              <div class="grid-left">
+                <div class="grid-title">
+                  <h2>
+                    Stepping Outside Your Comfort Zone: Exploring Lesser-Known
+                    Destinations
+                  </h2>
+                </div>
+                <div class="grid-text">
+                  <p>
+                    So, whether you are planning a solo adventure or a trip with
+                    friends and family, consider exploring off the beaten path.
+                    Who knows what incredible places you might discover?
+                  </p>
+                </div>
+              </div>
+              <div class="grid-right">
+                <img
+                  class="img-float-right"
+                  src="/Images/spotlight04.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="container">
+              <h1>MY LIST</h1>
+              <div class="row">
+                <div class="col-md-3">
+                  <h2>Amalfi Coast, Italy</h2>
+                  <p>
+                    The stunning
+                    <span class="hiddentxt">
+                      <a>coastline boasts</a>
+                    </span>
+                    <span class="hiddenimg">
+                      <img src="/Images/coastlineBoast.jpg" width="250" />
+                    </span>
+                    vibrant
+                    <span class="hiddentxt2">
+                      <a>turquoise waters</a>
+                    </span>
+                    <span class="hiddenimg2">
+                      <img src="/Images/water.jpg" width="250" /> </span
+                    >, picturesque
+                    <span class="hiddentxt3">
+                      <a>fishing villages</a>
+                    </span>
+                    <span class="hiddenimg3">
+                      <img src="/Images/Fishing.jpg" width="250" /> </span
+                    >, and dramatic cliffs that drop down to the sea.
+                  </p>
+                </div>
+                <div class="col-md-3">
+                  <h2>Santorini, Greece</h2>
+                  <p>
+                    Known for its
+                    <span class="hiddentxt4">
+                      <a>white-washed buildings,</a>
+                    </span>
+                    <span class="hiddenimg4">
+                      <img src="/Images/greece (1).jpg" width="250" />
+                    </span>
+                    <span class="hiddentxt5">
+                      <a> blue-domed churches,</a>
+                    </span>
+                    <span class="hiddenimg5">
+                      <img src="/Images/greece (3).jpg" width="250" />
+                    </span>
+                    and
+                    <span class="hiddentxt6">
+                      <a>breathtaking sunsets,</a>
+                    </span>
+                    <span class="hiddenimg6">
+                      <img src="/Images/greece (2).jpg" width="250" />
+                    </span>
+                    Santorini is a must-visit destination for any traveler.
+                  </p>
+                </div>
+                <div class="col-md-3">
+                  <h2>Ubud, Bali</h2>
+                  <p>
+                    The
+                    <span class="hiddentxt7">
+                      <a>lush forests,</a>
+                    </span>
+                    <span class="hiddenimg7">
+                      <img src="/Images/Bali (2).jpg" width="250" />
+                    </span>
+                    serene
+                    <span class="hiddentxt8">
+                      <a>rice paddies,</a>
+                    </span>
+                    <span class="hiddenimg8">
+                      <img src="/Images/Bali (1).jpg" width="250" />
+                    </span>
+                    and
+                    <span class="hiddentxt9">
+                      <a>stunning temples</a>
+                    </span>
+                    <span class="hiddenimg9">
+                      <img src="/Images/Bali (3).jpg" width="250" />
+                    </span>
+                    make Ubud a peaceful and rejuvenating destination.
+                  </p>
+                </div>
+                <div class="col-md-3">
+                  <h2>Banff National Park, Canada</h2>
+                  <p>
+                    The majestic
+                    <span class="hiddentxt10">
+                      <a>Rocky Mountains,</a>
+                    </span>
+                    <span class="hiddenimg10">
+                      <img src="/Images/Canada (3).jpg" width="250" />
+                    </span>
+                    <span class="hiddentxt11">
+                      <a>crystal-clear lakes,</a>
+                    </span>
+                    <span class="hiddenimg11">
+                      <img src="/Images/Canada (2).jpg" width="250" />
+                    </span>
+                    and diverse
+                    <span class="hiddentxt12">
+                      <a>wildlife</a>
+                    </span>
+                    <span class="hiddenimg12">
+                      <img src="/Images/Canada (1).jpg" width="250" />
+                    </span>
+                    make Banff National Park a nature lover's paradise.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-3">
-          <div class="product-item">
-            <img src="product2.jpg" alt="Product 2">
-            <div class="overlay">
-              <h3>Product 2</h3>
-              <p>A short description of Product 2.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="product-item">
-            <img src="product3.jpg" alt="Product 3">
-            <div class="overlay">
-              <h3>Product 3</h3>
-              <p>A short description of Product 3.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="product-item">
-            <img src="product4.jpg" alt="Product 4">
-            <div class="overlay">
-              <h3>Product 4</h3>
-              <p>A short description of Product 4.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#product-carousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#product-carousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
-  <!--Carouesl-->
-
-
-</div>
   `;
   initCarousel(); // Initialize the carousel on page load
   initCardCount();
+  initNavbarCollapse();
 }
 
 function initCardCount() {
@@ -524,3 +647,18 @@ function initCardCount() {
 }
 
 initCardCount();
+
+function initNavbarCollapse() {
+  // Initialize Bootstrap collapse plugin
+  $(".navbar-collapse").collapse();
+
+  // Attach click event listener to toggle button
+  $(".navbar-toggler").on("click", function () {
+    $(".navbar-collapse").collapse("toggle");
+  });
+}
+
+$(document).ready(function () {
+  // Call the initNavbarCollapse function on document ready
+  initNavbarCollapse();
+});
