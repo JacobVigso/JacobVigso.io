@@ -4,284 +4,156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login</title>
+  <title>Jacob Vigso | Web Developer Portfolio</title>
+  <meta name="description"
+    content="Portfolio showcasing web development projects by Jacob Vigso. Expert in creating high-quality, functional, and aesthetically pleasing websites." />
   <link rel="stylesheet" href="app.css" />
   <link rel="stylesheet" href="Animation.css" />
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
 </head>
 
 <body>
-  <div class="container-own">
-    
-      <section id="section1">
-        <h1 style="text-decoration: underline 2px">Jacob 
-          </h1>
-        <p>
-          Professional in website development who can create
-          <span>high-quality</span>, <span>functional</span>, and
-          <span>aesthetically</span> pleasing websites.
-        </p> 
-        <h1 style="text-decoration: overline 2px">Vigso</h1> 
-
-        <button><a onclick="removeOverflow()" href="#section2">Click here to scroll!</a></button>
-      </section>
-    
-    <section id="section2">
-      <div class="first-animation">
-        <h1 class="animation" data-animations="slide-in-from-left 2s ease 0s, fade-out 2s ease 8s">
-          Why You Should Choose me
+  <div class="portfolio-container">
+    <!-- Hero Section -->
+    <header class="portfolio-hero">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="hero-first">Jacob</span>
+          <span class="hero-last">Vigso</span>
         </h1>
-        <p class="animation hide" data-animations="slide-in-from-left 2s ease 2s, fade-out 2s ease 8s">
-          Creating beautiful websites is a passion for me <br />
-
-          <strong>Always</strong> tracking the latest trends in design across
-          the world's most prestigious luxury brands.
+        <p class="hero-subtitle">Web Developer & Designer</p>
+        <p class="hero-description">
+          Creating <span class="highlight">high-quality</span>, <span class="highlight">functional</span>, and
+          <span class="highlight">aesthetically</span> pleasing websites.
         </p>
       </div>
+    </header>
 
-      <div class="second-animation">
-        <div class="animation hide" data-animations="fade-in 2s ease 10s">
-          <div class="text">
-            <h2>Are you thinking minimalistic?</h2>
-            <p>i got it covert!</p>
-          </div>
-        </div>
+    <!-- Project Navigation -->
+    <nav class="project-nav">
+      <h2 class="projects-heading">Featured Projects</h2>
+      <ul class="project-tabs">
+        <li class="project-tab active" data-project="visconti">
+          <span class="tab-number">01</span>
+          <span class="tab-name">VISCONTI</span>
+          <span class="tab-type">Luxury Beauty</span>
+        </li>
+        <li class="project-tab" data-project="vast">
+          <span class="tab-number">02</span>
+          <span class="tab-name">VAST</span>
+          <span class="tab-type">Music Festival</span>
+        </li>
+        <li class="project-tab" data-project="blog">
+          <span class="tab-number">03</span>
+          <span class="tab-name">Wanderlust</span>
+          <span class="tab-type">Travel Blog</span>
+        </li>
+      </ul>
+    </nav>
 
-        <div class="animation wrapper hide" data-animations="fade-in 2s ease 12s">
-          <div class="element-to-hide" id="intro">
-            
+    <!-- Project Showcase -->
+    <main class="project-showcase">
+      <div class="project-content" id="project-display">
+        <!-- VISCONTI Default View -->
+        <div class="visconti-demo">
+          <nav class="visconti-nav">
+            <div class="visconti-logo">Visconti</div>
+            <div class="visconti-nav-links">
+              <a href="#">Collections</a>
+              <a href="#">Skincare</a>
+              <a href="#">About</a>
+              <a href="#">Contact</a>
+            </div>
+            <div class="visconti-cart">
+              <i class='bx bx-shopping-bag'></i>
+              <span class="cart-count">0</span>
+            </div>
+          </nav>
 
-          </div>
-          <div class="container-nav">
-            <nav class="nav">
-              <ul class="links">
-                <li class="active"><a id="change-1page-btn">VISCONTI - Beauty Shop</a></li>
-                <li><a id="change-2page-btn">VAST - Festival</a></li>
-                <li><a id="change-3page-btn">Personal Blog</a></li>
-              </ul>
-              <ul class="icons">
-                <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-                <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-              </ul>
-              </ul>
-            </nav>
-          </div>
-
-          <div class="container-small-own">
-
-
-            <div class="main-content">
-
-              <header>
-                <nav class="navbar navbar-expand-lg navbar-light bg-white">
-                  <div class="container">
-                    <!-- Logo -->
-                    <a class="navbar-brand" href="#">
-                      <h2>VISCONTI</h2>
-                    </a>
-                    <!-- Toggle Button for Mobile -->
-                    <button class="navbar-toggler justify-content-start" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <!-- Navigation Links -->
-                    <div class="collapse navbar-collapse justify-content-start" id="navbarNav">
-                      <ul class="navbar-nav">
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Shop</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Contact Us</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <!-- Search Bar -->
-                    <form class="d-flex ms-auto">
-                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                      <button class="btn btn-outline-dark" type="submit">Search</button>
-                    </form>
-                    <i class='bx bx-cart'><sup class="cart-count">0</sup></i>
-                  </div>
-                </nav>
-                <!-- Banner -->
-                <div class="container-fluid p-0">
-                  <img src="/Images/beauty-background.jpg" class="img-fluid" alt="Exclusive Beauty Products">
-                  <div class="overlay-text">
-                    <h1>Discover Our Exclusive Beauty Products</h1>
-                    <a href="#" class="btn btn-primary btn-lg">Discover Now</a>
-                  </div>
-                </div>
-              </header>
-              <h3 style="margin-top: 40px">Most popular products</h3>
-              <div class="carousel-container">
-                <div class="carousel-wrapper">
-                  <div class="carousel">
-                    <div class="product">
-                      <img class="lozad" src="/Images/Products/product (1).jpg" alt="Product 1" width="300"
-                        height="200">
-                      <div class="overlay">
-                        <h3>Radiant Glow Serum</h3>
-                        <p>Reduces lines, wrinkles, dark spots and improves radiance.</p>
-                        <p class="h4 font-weight-bold mt-4">$19.99</p>
-                        <button class="add-to-cart btn btn-primary btn-lg mt-4">Add to Cart</button>
-                      </div>
-                    </div>
-                    <div class="product">
-                      <img class="lozad" src="/Images/Products/product (2).jpg" alt="Product 2" width="300"
-                        height="200">
-                      <div class="overlay">
-                        <h3>Dreamy Hair Oil</h3>
-                        <p>Nourishes, strengthens, and adds shine to hair.</p>
-                        <p class="h4 font-weight-bold mt-4">$19.99</p>
-                        <button class="add-to-cart btn btn-primary btn-lg mt-4">Add to Cart</button>
-                      </div>
-                    </div>
-                    <div class="product">
-                      <img class="lozad" src="/Images/Products/product (3).jpg" alt="Product 3" width="300"
-                        height="200">
-                      <div class="overlay">
-                        <h3>Fresh Face Cleanser</h3>
-                        <p>Gently removes impurities and makeup without drying skin.</p>
-                        <p class="h4 font-weight-bold mt-4">$19.99</p>
-                        <button class="add-to-cart btn btn-primary btn-lg mt-4">Add to Cart</button>
-                      </div>
-                    </div>
-                    <div class="product">
-                      <img class="lozad" src="/Images/Products/product (4).jpg" alt="Product 4" width="300"
-                        height="200">
-                      <div class="overlay">
-                        <h3>Plumping Lip Gloss</h3>
-                        <p>Hydrates and volumizes lips for a fuller look.</p>
-                        <p class="h4 font-weight-bold mt-4">$19.99</p>
-                        <button class="add-to-cart btn btn-primary btn-lg mt-4">Add to Cart</button>
-                      </div>
-                    </div>
-                    <div class="product">
-                      <img class="lozad" src="/Images/Products/product (5).jpg" alt="Product 5" width="300"
-                        height="200">
-                      <div class="overlay">
-                        <h3>Intensive Hand Cream</h3>
-                        <p> Reduces puffiness, dark circles, and fine lines around the eyes.</p>
-                        <p class="h4 font-weight-bold mt-4">$19.99</p>
-                        <button class="add-to-cart btn btn-primary btn-lg mt-4">Add to Cart</button>
-                      </div>
-                    </div>
-                    <div class="product">
-                      <img class="lozad" src="/Images/Products/product (6).jpg" alt="Product 6" width="300"
-                        height="200">
-                      <div class="overlay">
-                        <h3>Soothing Body Lotion</h3>
-                        <p> Hydrates and soothes dry, sensitive skin.</p>
-                        <p class="h4 font-weight-bold mt-4">$19.99</p>
-                        <button class="add-to-cart btn btn-primary btn-lg mt-4">Add to Cart</button>
-                      </div>
-                    </div>
-                    <!-- add more products as needed -->
-                    <div class="product">
-                      <img class="lozad" src="/Images/Products/product (7).jpg" alt="Product 7" width="300"
-                        height="200">
-                      <div class="overlay">
-                        <h3>Hydrating Facial Mist</h3>
-                        <p>Refreshes and hydrates skin for a dewy look.</p>
-                        <p class="h4 font-weight-bold mt-4">$19.99</p>
-                        <button class="add-to-cart btn btn-primary btn-lg mt-4">Add to Cart</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <button class="prev-button">&#8249;</button>
-                <button class="next-button">&#8250;</button>
-
+          <div class="visconti-hero">
+            <img src="/Images/beauty-background.jpg" alt="Luxury Beauty">
+            <div class="visconti-hero-overlay">
+              <div class="visconti-hero-content">
+                <h1>Timeless Beauty, Elevated</h1>
+                <p>Discover our curated collection of premium skincare and beauty essentials, crafted for those who
+                  appreciate the finer things.</p>
+                <button class="visconti-btn">Explore Collection</button>
               </div>
-              <div id="popup-message">Product added to cart!</div>
-              <!--Carouesl-->
-
-              <div class="product-reviews">
-                <h2>What our customers say</h2>
-                <div class="flex">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="card-title">
-                        <img id="user-img" src="/Images/users/userAvatar01.svg" alt="" />
-                        <h5>Review by Sarah L.</h5>
-                      </div>
-                      <div class="card-text">
-                        <p>"I'm in love with the new line of skincare from Visconti! My skin has never
-                          felt so smooth and hydrated. Thank you, Visconti!"</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="card-title">
-                        <img id="user-img" src="/Images/users/userAvatar02.svg" alt="" />
-                        <h5>Review by Emily T.</h5>
-                      </div>
-                      <div class="card-text">
-                        <p>"I've been using the mascara from Visconti for the past month and I'm
-                          obsessed!
-                          It gives my lashes length and volume without clumping. Highly recommend!"</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="card-title">
-                        <img id="user-img" src="/Images/users/userAvatar05.svg" alt="" />
-                        <h5>Review by Isabella C.</h5>
-                      </div>
-                      <div class="card-text">
-                        <p>"The lipsticks from Visconti are my go-to! They have a great selection of
-                          shades and the formula is so moisturizing. 10/10!"</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <h2 class="awards">Our award winning products</h2>
-              <ul>
-                <li><span class="bold">Best</span> Skincare Brand of the Year - Visconti</li>
-                <li>Most <span class="bold">Innovative</span> Beauty Product - Visconti's Mascara</li>
-                <li><span class="bold">Best</span> Lipstick Collection - Visconti</li>
-              </ul>
             </div>
           </div>
+
+          <div class="visconti-section-title">
+            <h2>Bestsellers</h2>
+            <p>Our most loved products, chosen by you</p>
+          </div>
+
+          <div class="visconti-products">
+            <div class="visconti-product">
+              <img src="/Images/Products/product (1).jpg" alt="Radiant Glow Serum">
+              <button class="add-to-cart">Add to Bag</button>
+              <div class="visconti-product-info">
+                <h3>Radiant Glow Serum</h3>
+                <span class="price">$89</span>
+              </div>
+            </div>
+            <div class="visconti-product">
+              <img src="/Images/Products/product (2).jpg" alt="Dreamy Hair Oil">
+              <button class="add-to-cart">Add to Bag</button>
+              <div class="visconti-product-info">
+                <h3>Dreamy Hair Oil</h3>
+                <span class="price">$65</span>
+              </div>
+            </div>
+            <div class="visconti-product">
+              <img src="/Images/Products/product (3).jpg" alt="Fresh Face Cleanser">
+              <button class="add-to-cart">Add to Bag</button>
+              <div class="visconti-product-info">
+                <h3>Fresh Face Cleanser</h3>
+                <span class="price">$48</span>
+              </div>
+            </div>
+            <div class="visconti-product">
+              <img src="/Images/Products/product (4).jpg" alt="Plumping Lip Gloss">
+              <button class="add-to-cart">Add to Bag</button>
+              <div class="visconti-product-info">
+                <h3>Plumping Lip Gloss</h3>
+                <span class="price">$32</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="visconti-reviews">
+            <h2>What They're Saying</h2>
+            <div class="visconti-reviews-grid">
+              <div class="visconti-review">
+                <img src="/Images/users/userAvatar01.svg" alt="Sarah L.">
+                <p>"The Radiant Glow Serum has completely transformed my skin. I've never felt more confident."</p>
+                <h4>Sarah L.</h4>
+              </div>
+              <div class="visconti-review">
+                <img src="/Images/users/userAvatar02.svg" alt="Emily T.">
+                <p>"Visconti products are the only ones I trust. Luxurious feel, real results."</p>
+                <h4>Emily T.</h4>
+              </div>
+              <div class="visconti-review">
+                <img src="/Images/users/userAvatar05.svg" alt="Isabella C.">
+                <p>"Finally found a brand that understands what premium skincare should be."</p>
+                <h4>Isabella C.</h4>
+              </div>
+            </div>
+          </div>
+
+          <div id="popup-message">Added to your bag</div>
         </div>
       </div>
-    </section>
+    </main>
 
-    <section id="section3"></section>
-    <section id="section4"></section>
-    <section id="section5"></section>
+    <!-- Footer -->
+    <footer class="portfolio-footer">
+      <p>&copy; 2024 Jacob Vigso. All rights reserved.</p>
+    </footer>
   </div>
 
-
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js">
-    const observer = lozad();
-    observer.observe();</script>
   <script src="script.js"></script>
 </body>
 

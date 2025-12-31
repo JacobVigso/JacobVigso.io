@@ -1,126 +1,122 @@
-.animation {
-  position: relative;
-}
+/* ========================
+   ANIMATION UTILITIES
+   ======================== */
 
-.absolute {
-  position: absolute;
-  top: 20rem;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%; /* Need a specific value to work */
-}
+/* Fade animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 
-@keyframes bounce {
-  0%,
-  100% {
+  to {
+    opacity: 1;
     transform: translateY(0);
   }
-  50% {
-    transform: translateY(-20px);
-  }
 }
 
-@keyframes fade {
+@keyframes fadeOut {
   from {
     opacity: 1;
   }
+
   to {
     opacity: 0;
   }
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes fade-in {
+/* Slide animations */
+@keyframes slideInLeft {
   from {
     opacity: 0;
+    transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
-  }
-}
-
-.fade-in {
-  animation: fade-in 2s ease;
-}
-
-@keyframes slide-in-from-left {
-  from {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  to {
     transform: translateX(0);
-    opacity: 1;
   }
 }
 
-@keyframes slide-out {
+@keyframes slideInRight {
   from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
     transform: translateX(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-}
-@keyframes fade-out {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
   }
 }
 
-.fade-out {
-  transition: 1s ease-in;
-  opacity: 0;
-}
-
+/* Popup notification */
 #popup-message {
   position: fixed;
-  top: 40%;
-  left: 49.65%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 30px 40px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 25px 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   opacity: 0;
-  transition: opacity .7s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   pointer-events: none;
+  z-index: 9999;
+  font-weight: 500;
+  font-size: 1.1rem;
 }
 
 #popup-message.show {
   opacity: 1;
-  transition: opacity .2s ease-in-out;
+  transform: translate(-50%, -50%) scale(1.05);
 }
 
-@keyframes button-animation {
+/* Button click animation */
+@keyframes buttonPop {
   0% {
     transform: scale(1);
   }
+
   50% {
-    transform: scale(1.2);
-    background-color: aquamarine;
+    transform: scale(1.1);
+    background-color: #e94560;
   }
+
   100% {
     transform: scale(1);
   }
 }
 
 .add-to-cart.clicked {
-  animation-name: button-animation;
-  animation-duration: 0.6s;
+  animation: buttonPop 0.4s ease;
+}
+
+/* Utility classes */
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.5s ease forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.5s ease forwards;
+}
+
+/* Hover transitions */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
