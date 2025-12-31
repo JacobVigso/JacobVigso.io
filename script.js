@@ -113,7 +113,7 @@ const projectContent = {
         <h2>Featured Artists</h2>
         <div class="vast-artists">
           <div class="vast-artist">
-            <img src="https://www.roskilde-festival.dk/media/4909/kendrick-lamar-new.jpg?quality=88&width=576&height=700&mode=crop" alt="Kendrick Lamar">
+            <img src="/Images/Kendrick.jpg" alt="Kendrick Lamar">
             <div class="vast-artist-overlay">
               <h3>Kendrick Lamar</h3>
               <p>Headliner • Saturday Night</p>
@@ -127,7 +127,7 @@ const projectContent = {
             </div>
           </div>
           <div class="vast-artist">
-            <img src="https://images.pexels.com/photos/4572204/pexels-photo-4572204.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Community Camping">
+            <img src="/Images/pexels-wendy-wei-1540406.jpg" alt="Community Camping">
             <div class="vast-artist-overlay">
               <h3>Community Camp</h3>
               <p>Live The Experience</p>
