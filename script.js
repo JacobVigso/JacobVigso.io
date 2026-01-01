@@ -1,5 +1,64 @@
 // ========================
-// PROJECT SWITCHING
+// SMOOTH SCROLL NAVIGATION
+// ========================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+
+// ========================
+// SCROLL ANIMATIONS
+// ========================
+
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const fadeInObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+// Observe all sections and cards
+document.querySelectorAll('.about-section, .philosophy-card, .project-card, .skill-category, .contact-section').forEach(el => {
+  el.classList.add('fade-in');
+  fadeInObserver.observe(el);
+});
+
+// ========================
+// NAVBAR SCROLL EFFECT
+// ========================
+
+const nav = document.querySelector('.main-nav');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset;
+
+  if (currentScroll > 100) {
+    nav.style.background = 'rgba(10, 10, 15, 0.95)';
+  } else {
+    nav.style.background = 'rgba(10, 10, 15, 0.85)';
+  }
+
+  lastScroll = currentScroll;
+});
+
+// ========================
+// WEB DESIGN PROJECT SWITCHING
 // ========================
 
 const projectTabs = document.querySelectorAll('.project-tab');
@@ -284,6 +343,25 @@ function initCartCount() {
     });
   }
 }
+
+// ========================
+// ADD CSS FOR ANIMATIONS
+// ========================
+
+const style = document.createElement('style');
+style.textContent = `
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+document.head.appendChild(style);
 
 // ========================
 // INITIALIZATION

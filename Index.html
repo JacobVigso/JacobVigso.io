@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jacob Vigso | Web Developer Portfolio</title>
+  <title>Jacob Vigsø | Creative Technologist</title>
   <meta name="description"
-    content="Portfolio showcasing web development projects by Jacob Vigso. Expert in creating high-quality, functional, and aesthetically pleasing websites." />
+    content="Portfolio of Jacob Vigsø - Creative Technologist & Interaction Designer specializing in bridging complex technology and intuitive user experiences." />
   <link rel="stylesheet" href="app.css" />
   <link rel="stylesheet" href="Animation.css" />
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -14,143 +14,402 @@
 
 <body>
   <div class="portfolio-container">
-    <!-- Hero Section -->
-    <header class="portfolio-hero">
-      <div class="hero-content">
-        <h1 class="hero-title">
-          <span class="hero-first">Jacob</span>
-          <span class="hero-last">Vigso</span>
-        </h1>
-        <p class="hero-subtitle">Web Developer & Designer</p>
-        <p class="hero-description">
-          Creating <span class="highlight">high-quality</span>, <span class="highlight">functional</span>, and
-          <span class="highlight">aesthetically</span> pleasing websites.
-        </p>
-      </div>
-    </header>
-
-    <!-- Project Navigation -->
-    <nav class="project-nav">
-      <h2 class="projects-heading">Featured Projects</h2>
-      <ul class="project-tabs">
-        <li class="project-tab active" data-project="visconti">
-          <span class="tab-number">01</span>
-          <span class="tab-name">VISCONTI</span>
-          <span class="tab-type">Luxury Beauty</span>
-        </li>
-        <li class="project-tab" data-project="vast">
-          <span class="tab-number">02</span>
-          <span class="tab-name">VAST</span>
-          <span class="tab-type">Music Festival</span>
-        </li>
-        <li class="project-tab" data-project="blog">
-          <span class="tab-number">03</span>
-          <span class="tab-name">Wanderlust</span>
-          <span class="tab-type">Travel Blog</span>
-        </li>
+    <!-- Navigation -->
+    <nav class="main-nav">
+      <div class="nav-logo">JV</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#webdesign">Web Design</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
-    <!-- Project Showcase -->
-    <main class="project-showcase">
-      <div class="project-content" id="project-display">
-        <!-- VISCONTI Default View -->
-        <div class="visconti-demo">
-          <nav class="visconti-nav">
-            <div class="visconti-logo">Visconti</div>
-            <div class="visconti-nav-links">
-              <a href="#">Collections</a>
-              <a href="#">Skincare</a>
-              <a href="#">About</a>
-              <a href="#">Contact</a>
-            </div>
-            <div class="visconti-cart">
-              <i class='bx bx-shopping-bag'></i>
-              <span class="cart-count">0</span>
-            </div>
-          </nav>
-
-          <div class="visconti-hero">
-            <img src="/Images/beauty-background.jpg" alt="Luxury Beauty">
-            <div class="visconti-hero-overlay">
-              <div class="visconti-hero-content">
-                <h1>Timeless Beauty, Elevated</h1>
-                <p>Discover our curated collection of premium skincare and beauty essentials, crafted for those who
-                  appreciate the finer things.</p>
-                <button class="visconti-btn">Explore Collection</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="visconti-section-title">
-            <h2>Bestsellers</h2>
-            <p>Our most loved products, chosen by you</p>
-          </div>
-
-          <div class="visconti-products">
-            <div class="visconti-product">
-              <img src="/Images/Products/product (1).jpg" alt="Radiant Glow Serum">
-              <button class="add-to-cart">Add to Bag</button>
-              <div class="visconti-product-info">
-                <h3>Radiant Glow Serum</h3>
-                <span class="price">$89</span>
-              </div>
-            </div>
-            <div class="visconti-product">
-              <img src="/Images/Products/product (2).jpg" alt="Dreamy Hair Oil">
-              <button class="add-to-cart">Add to Bag</button>
-              <div class="visconti-product-info">
-                <h3>Dreamy Hair Oil</h3>
-                <span class="price">$65</span>
-              </div>
-            </div>
-            <div class="visconti-product">
-              <img src="/Images/Products/product (3).jpg" alt="Fresh Face Cleanser">
-              <button class="add-to-cart">Add to Bag</button>
-              <div class="visconti-product-info">
-                <h3>Fresh Face Cleanser</h3>
-                <span class="price">$48</span>
-              </div>
-            </div>
-            <div class="visconti-product">
-              <img src="/Images/Products/product (4).jpg" alt="Plumping Lip Gloss">
-              <button class="add-to-cart">Add to Bag</button>
-              <div class="visconti-product-info">
-                <h3>Plumping Lip Gloss</h3>
-                <span class="price">$32</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="visconti-reviews">
-            <h2>What They're Saying</h2>
-            <div class="visconti-reviews-grid">
-              <div class="visconti-review">
-                <img src="/Images/users/userAvatar01.svg" alt="Sarah L.">
-                <p>"The Radiant Glow Serum has completely transformed my skin. I've never felt more confident."</p>
-                <h4>Sarah L.</h4>
-              </div>
-              <div class="visconti-review">
-                <img src="/Images/users/userAvatar02.svg" alt="Emily T.">
-                <p>"Visconti products are the only ones I trust. Luxurious feel, real results."</p>
-                <h4>Emily T.</h4>
-              </div>
-              <div class="visconti-review">
-                <img src="/Images/users/userAvatar05.svg" alt="Isabella C.">
-                <p>"Finally found a brand that understands what premium skincare should be."</p>
-                <h4>Isabella C.</h4>
-              </div>
-            </div>
-          </div>
-
-          <div id="popup-message">Added to your bag</div>
+    <!-- Hero Section -->
+    <header class="portfolio-hero" id="hero">
+      <div class="hero-content">
+        <span class="hero-badge">Medialogy @ AAU Copenhagen</span>
+        <h1 class="hero-title">
+          <span class="hero-first">Jacob</span>
+          <span class="hero-last">Vigsø</span>
+        </h1>
+        <p class="hero-subtitle">Creative Technologist & Interaction Designer</p>
+        <p class="hero-description">
+          I specialize in bridging the gap between <span class="highlight">complex technology</span> and
+          <span class="highlight">intuitive user experiences</span>—from computer vision controllers to immersive VR
+          narratives.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn-primary">View My Work</a>
+          <a href="#contact" class="btn-secondary">Get In Touch</a>
         </div>
       </div>
-    </main>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+      <div class="about-container">
+        <div class="about-image">
+          <div class="about-image-placeholder">
+            <i class='bx bx-user'></i>
+          </div>
+        </div>
+        <div class="about-content">
+          <span class="section-label">About Me</span>
+          <h2>Making Technology <span class="highlight">Accessible</span></h2>
+          <p>
+            My background in Medialogy at AAU Copenhagen has trained me to design, build, and test interactive systems.
+            I am passionate about transforming passive observation into active participation—making technology adapt to
+            the user, not the other way around.
+          </p>
+          <p>
+            I believe in an iterative design process: design, test, fail, refine. Problem-Based Learning (PBL) is at the
+            core of everything I do.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy-section">
+      <div class="philosophy-container">
+        <span class="section-label">Core Philosophy</span>
+        <h2>How I Approach Design</h2>
+        <div class="philosophy-grid">
+          <div class="philosophy-card">
+            <div class="philosophy-icon"><i class='bx bx-user-check'></i></div>
+            <h3>Human-Centric</h3>
+            <p>Technology should adapt to the user, not the other way around.</p>
+          </div>
+          <div class="philosophy-card">
+            <div class="philosophy-icon"><i class='bx bx-refresh'></i></div>
+            <h3>Iterative</h3>
+            <p>Design, test, fail, refine. Problem-Based Learning (PBL) is at the core of my process.</p>
+          </div>
+          <div class="philosophy-card">
+            <div class="philosophy-icon"><i class='bx bx-layer'></i></div>
+            <h3>Multidisciplinary</h3>
+            <p>Combining code, hardware, and audio-visual aesthetics to create holistic experiences.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+      <div class="projects-container">
+        <span class="section-label">Selected Work</span>
+        <h2>Featured Projects</h2>
+
+        <!-- Project 01: IPASIF -->
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-number">01</span>
+            <div class="project-tags">
+              <span class="tag">Creative Coding</span>
+              <span class="tag">Experience Design</span>
+              <span class="tag">IoT</span>
+            </div>
+          </div>
+          <h3 class="project-title">IPASIF</h3>
+          <p class="project-subtitle">Interactive Sound Installation Framework</p>
+
+          <div class="project-body">
+            <div class="project-section">
+              <h4>The Challenge</h4>
+              <p>Artists often struggle to create interactive sound installations due to the technical complexity of
+                connecting sensors, audio synthesis, and visuals. We needed a modular toolkit that bridges the gap
+                between physical performance and digital output.</p>
+            </div>
+
+            <div class="project-section">
+              <h4>The Solution</h4>
+              <p>IPASIF is a wireless, modular framework that allows artists to plug in various sensors and immediately
+                manipulate sound and visuals in real-time. We validated this by building three use cases, including
+                "Ballin'"—a ball containing an accelerometer that modifies music based on how it is thrown.</p>
+            </div>
+
+            <div class="project-tech">
+              <h4>Technical Stack</h4>
+              <div class="tech-grid">
+                <span class="tech-item">ESP32 Microcontrollers</span>
+                <span class="tech-item">ESP-NOW Protocol</span>
+                <span class="tech-item">PureData</span>
+                <span class="tech-item">TouchDesigner</span>
+                <span class="tech-item">OSC over UDP</span>
+              </div>
+            </div>
+
+            <div class="project-achievements">
+              <h4>Key Achievements</h4>
+              <ul>
+                <li>Collaborated weekly with professional artists (Lars Greve, Tina Tarpgaard) to iterate on the
+                  framework</li>
+                <li>Achieved average wireless latency of ~44ms for live performance responsiveness</li>
+                <li>Designed a "black box" sensor unit with intuitive X/Y/Z axis alignment</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 02: TACET -->
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-number">02</span>
+            <div class="project-tags">
+              <span class="tag">Virtual Reality</span>
+              <span class="tag">Storytelling</span>
+              <span class="tag">User Agency</span>
+            </div>
+          </div>
+          <h3 class="project-title">TACET</h3>
+          <p class="project-subtitle">VR Narrative Extension</p>
+
+          <div class="project-body">
+            <div class="project-section">
+              <h4>The Challenge</h4>
+              <p>How do you translate the passive viewing experience of a film into an active VR environment without
+                breaking the narrative? The goal was to extend the universe of the short film TACET into a "Cinematic
+                VR" experience.</p>
+            </div>
+
+            <div class="project-section">
+              <h4>The Solution</h4>
+              <p>A VR experience where the user steps into the shoes of the protagonist, Adam. Unlike a film, the user
+                navigates physical space to progress the story. The environment utilizes non-euclidean geometry
+                (impossible spaces) to reflect the psychological state of the character.</p>
+            </div>
+
+            <div class="project-tech">
+              <h4>Technical Stack</h4>
+              <div class="tech-grid">
+                <span class="tech-item">Meta Quest VR</span>
+                <span class="tech-item">Unity</span>
+                <span class="tech-item">Figma</span>
+                <span class="tech-item">Spatial Audio</span>
+                <span class="tech-item">Haptics</span>
+              </div>
+            </div>
+
+            <div class="project-achievements">
+              <h4>Design Philosophy</h4>
+              <ul>
+                <li>Worked directly with the film's director (Ahmed Kholy) to respect the original artistic vision</li>
+                <li>Created seamless transition from virtual cinema setting into the film's actual set</li>
+                <li>Focused on "Deep Co-Presence" using spatial audio and haptics for physical presence</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Web Design Showcase Section -->
+    <section class="webdesign-section" id="webdesign">
+      <div class="webdesign-header">
+        <span class="section-label">Web Design</span>
+        <h2>Website Showcase</h2>
+        <p class="webdesign-description">Interactive demos showcasing my frontend development and design skills.</p>
+      </div>
+
+      <!-- Project Navigation Tabs -->
+      <nav class="project-nav">
+        <ul class="project-tabs">
+          <li class="project-tab active" data-project="visconti">
+            <span class="tab-number">01</span>
+            <span class="tab-name">VISCONTI</span>
+            <span class="tab-type">Luxury Beauty</span>
+          </li>
+          <li class="project-tab" data-project="vast">
+            <span class="tab-number">02</span>
+            <span class="tab-name">VAST</span>
+            <span class="tab-type">Music Festival</span>
+          </li>
+          <li class="project-tab" data-project="blog">
+            <span class="tab-number">03</span>
+            <span class="tab-name">Wanderlust</span>
+            <span class="tab-type">Travel Blog</span>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Project Showcase -->
+      <div class="project-showcase">
+        <div class="project-content" id="project-display">
+          <!-- VISCONTI Default View -->
+          <div class="visconti-demo">
+            <nav class="visconti-nav">
+              <div class="visconti-logo">Visconti</div>
+              <div class="visconti-nav-links">
+                <a href="#">Collections</a>
+                <a href="#">Skincare</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+              </div>
+              <div class="visconti-cart">
+                <i class='bx bx-shopping-bag'></i>
+                <span class="cart-count">0</span>
+              </div>
+            </nav>
+
+            <div class="visconti-hero">
+              <img src="/Images/beauty-background.jpg" alt="Luxury Beauty">
+              <div class="visconti-hero-overlay">
+                <div class="visconti-hero-content">
+                  <h1>Timeless Beauty, Elevated</h1>
+                  <p>Discover our curated collection of premium skincare and beauty essentials, crafted for those who
+                    appreciate the finer things.</p>
+                  <button class="visconti-btn">Explore Collection</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="visconti-section-title">
+              <h2>Bestsellers</h2>
+              <p>Our most loved products, chosen by you</p>
+            </div>
+
+            <div class="visconti-products">
+              <div class="visconti-product">
+                <img src="/Images/Products/product (1).jpg" alt="Radiant Glow Serum">
+                <button class="add-to-cart">Add to Bag</button>
+                <div class="visconti-product-info">
+                  <h3>Radiant Glow Serum</h3>
+                  <span class="price">$89</span>
+                </div>
+              </div>
+              <div class="visconti-product">
+                <img src="/Images/Products/product (2).jpg" alt="Dreamy Hair Oil">
+                <button class="add-to-cart">Add to Bag</button>
+                <div class="visconti-product-info">
+                  <h3>Dreamy Hair Oil</h3>
+                  <span class="price">$65</span>
+                </div>
+              </div>
+              <div class="visconti-product">
+                <img src="/Images/Products/product (3).jpg" alt="Fresh Face Cleanser">
+                <button class="add-to-cart">Add to Bag</button>
+                <div class="visconti-product-info">
+                  <h3>Fresh Face Cleanser</h3>
+                  <span class="price">$48</span>
+                </div>
+              </div>
+              <div class="visconti-product">
+                <img src="/Images/Products/product (4).jpg" alt="Plumping Lip Gloss">
+                <button class="add-to-cart">Add to Bag</button>
+                <div class="visconti-product-info">
+                  <h3>Plumping Lip Gloss</h3>
+                  <span class="price">$32</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="visconti-reviews">
+              <h2>What They're Saying</h2>
+              <div class="visconti-reviews-grid">
+                <div class="visconti-review">
+                  <img src="/Images/users/userAvatar01.svg" alt="Sarah L.">
+                  <p>"The Radiant Glow Serum has completely transformed my skin. I've never felt more confident."</p>
+                  <h4>Sarah L.</h4>
+                </div>
+                <div class="visconti-review">
+                  <img src="/Images/users/userAvatar02.svg" alt="Emily T.">
+                  <p>"Visconti products are the only ones I trust. Luxurious feel, real results."</p>
+                  <h4>Emily T.</h4>
+                </div>
+                <div class="visconti-review">
+                  <img src="/Images/users/userAvatar05.svg" alt="Isabella C.">
+                  <p>"Finally found a brand that understands what premium skincare should be."</p>
+                  <h4>Isabella C.</h4>
+                </div>
+              </div>
+            </div>
+
+            <div id="popup-message">Added to your bag</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+      <div class="skills-container">
+        <span class="section-label">Expertise</span>
+        <h2>Skills & Tools</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <div class="skill-icon"><i class='bx bx-code-alt'></i></div>
+            <h3>Development</h3>
+            <div class="skill-items">
+              <span class="skill-item">C# (Unity)</span>
+              <span class="skill-item">Python</span>
+              <span class="skill-item">OpenCV</span>
+              <span class="skill-item">Git</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-icon"><i class='bx bx-palette'></i></div>
+            <h3>Creative Software</h3>
+            <div class="skill-items">
+              <span class="skill-item">TouchDesigner</span>
+              <span class="skill-item">PureData</span>
+              <span class="skill-item">Figma</span>
+              <span class="skill-item">Adobe Suite</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-icon"><i class='bx bx-chip'></i></div>
+            <h3>Hardware & IoT</h3>
+            <div class="skill-items">
+              <span class="skill-item">Arduino</span>
+              <span class="skill-item">ESP32</span>
+              <span class="skill-item">Sensors</span>
+              <span class="skill-item">ESP-NOW / UDP / OSC</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-icon"><i class='bx bx-bulb'></i></div>
+            <h3>Methodologies</h3>
+            <div class="skill-items">
+              <span class="skill-item">PBL</span>
+              <span class="skill-item">User Testing</span>
+              <span class="skill-item">Rapid Prototyping</span>
+              <span class="skill-item">Interaction Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <span class="section-label">Get In Touch</span>
+        <h2>Let's Work Together</h2>
+        <p class="contact-description">
+          Interested in collaborating on a project or just want to connect? Feel free to reach out!
+        </p>
+        <div class="contact-links">
+          <a href="mailto:vigsojacob@gmail.com" class="contact-link">
+            <i class='bx bx-envelope'></i>
+            <span>vigsojacob@gmail.com</span>
+          </a>
+          <a href="https://www.linkedin.com/in/jacob-vigs%C3%B8-366a5130b/" target="_blank" class="contact-link">
+            <i class='bx bxl-linkedin'></i>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/JacobVigsoe" target="_blank" class="contact-link">
+            <i class='bx bxl-github'></i>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
     <!-- Footer -->
     <footer class="portfolio-footer">
-      <p>&copy; 2024 Jacob Vigso. All rights reserved.</p>
+      <p>&copy; 2026 Jacob Vigsø. All rights reserved.</p>
     </footer>
   </div>
 
