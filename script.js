@@ -83,7 +83,7 @@ const projectContent = {
       </nav>
       
       <div class="visconti-hero">
-        <img src="/Images/beauty-background.jpg" alt="Luxury Beauty">
+        <img src="Images/beauty-background.jpg" alt="Luxury Beauty">
         <div class="visconti-hero-overlay">
           <div class="visconti-hero-content">
             <h1>Timeless Beauty, Elevated</h1>
@@ -100,7 +100,7 @@ const projectContent = {
       
       <div class="visconti-products">
         <div class="visconti-product">
-          <img src="/Images/Products/product (1).jpg" alt="Radiant Glow Serum">
+          <img src="Images/Products/product (1).jpg" alt="Radiant Glow Serum">
           <button class="add-to-cart">Add to Bag</button>
           <div class="visconti-product-info">
             <h3>Radiant Glow Serum</h3>
@@ -108,7 +108,7 @@ const projectContent = {
           </div>
         </div>
         <div class="visconti-product">
-          <img src="/Images/Products/product (2).jpg" alt="Dreamy Hair Oil">
+          <img src="Images/Products/product (2).jpg" alt="Dreamy Hair Oil">
           <button class="add-to-cart">Add to Bag</button>
           <div class="visconti-product-info">
             <h3>Dreamy Hair Oil</h3>
@@ -116,7 +116,7 @@ const projectContent = {
           </div>
         </div>
         <div class="visconti-product">
-          <img src="/Images/Products/product (3).jpg" alt="Fresh Face Cleanser">
+          <img src="Images/Products/product (3).jpg" alt="Fresh Face Cleanser">
           <button class="add-to-cart">Add to Bag</button>
           <div class="visconti-product-info">
             <h3>Fresh Face Cleanser</h3>
@@ -124,7 +124,7 @@ const projectContent = {
           </div>
         </div>
         <div class="visconti-product">
-          <img src="/Images/Products/product (4).jpg" alt="Plumping Lip Gloss">
+          <img src="Images/Products/product (4).jpg" alt="Plumping Lip Gloss">
           <button class="add-to-cart">Add to Bag</button>
           <div class="visconti-product-info">
             <h3>Plumping Lip Gloss</h3>
@@ -137,17 +137,17 @@ const projectContent = {
         <h2>What They're Saying</h2>
         <div class="visconti-reviews-grid">
           <div class="visconti-review">
-            <img src="/Images/users/userAvatar01.svg" alt="Sarah L.">
+            <img src="Images/users/userAvatar01.svg" alt="Sarah L.">
             <p>"The Radiant Glow Serum has completely transformed my skin. I've never felt more confident."</p>
             <h4>Sarah L.</h4>
           </div>
           <div class="visconti-review">
-            <img src="/Images/users/userAvatar02.svg" alt="Emily T.">
+            <img src="Images/users/userAvatar02.svg" alt="Emily T.">
             <p>"Visconti products are the only ones I trust. Luxurious feel, real results."</p>
             <h4>Emily T.</h4>
           </div>
           <div class="visconti-review">
-            <img src="/Images/users/userAvatar05.svg" alt="Isabella C.">
+            <img src="Images/users/userAvatar05.svg" alt="Isabella C.">
             <p>"Finally found a brand that understands what premium skincare should be."</p>
             <h4>Isabella C.</h4>
           </div>
@@ -172,7 +172,7 @@ const projectContent = {
         <h2>Featured Artists</h2>
         <div class="vast-artists">
           <div class="vast-artist">
-            <img src="/Images/Kendrick.jpg" alt="Kendrick Lamar">
+            <img src="Images/Kendrick.jpg" alt="Kendrick Lamar">
             <div class="vast-artist-overlay">
               <h3>Kendrick Lamar</h3>
               <p>Headliner • Saturday Night</p>
@@ -186,7 +186,7 @@ const projectContent = {
             </div>
           </div>
           <div class="vast-artist">
-            <img src="/Images/pexels-wendy-wei-1540406.jpg" alt="Community Camping">
+            <img src="Images/pexels-wendy-wei-1540406.jpg" alt="Community Camping">
             <div class="vast-artist-overlay">
               <h3>Community Camp</h3>
               <p>Live The Experience</p>
@@ -205,7 +205,7 @@ const projectContent = {
   blog: `
     <div class="blog-demo">
       <div class="blog-hero">
-        <img src="/Images/header-Blog.jpg" alt="Travel Adventure">
+        <img src="Images/header-Blog.jpg" alt="Travel Adventure">
         <div class="blog-hero-overlay">
           <div class="blog-hero-content">
             <span class="blog-category">Featured Story</span>
@@ -221,7 +221,7 @@ const projectContent = {
         <div class="blog-grid">
           <div class="blog-article">
             <div class="blog-article-img">
-              <img src="/Images/spotlight02.jpg" alt="Hidden Gems">
+              <img src="Images/spotlight02.jpg" alt="Hidden Gems">
             </div>
             <div class="blog-article-content">
               <h3>Discovering Hidden Gems: Off the Beaten Path</h3>
@@ -230,7 +230,7 @@ const projectContent = {
           </div>
           <div class="blog-article">
             <div class="blog-article-img">
-              <img src="/Images/spotlight03.jpg" alt="Rewards of Travel">
+              <img src="Images/spotlight03.jpg" alt="Rewards of Travel">
             </div>
             <div class="blog-article-content">
               <h3>The Rewards of Traveling Without a Plan</h3>
