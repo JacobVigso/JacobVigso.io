@@ -471,6 +471,32 @@ body {
   margin-bottom: 30px;
 }
 
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: -12px 0 30px;
+  padding: 9px 18px;
+  background: var(--accent-gradient);
+  border-radius: 50px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+}
+
+.project-link i {
+  font-size: 1.05rem;
+}
+
 .project-body {
   border-top: 1px solid var(--glass-border);
   padding-top: 30px;
