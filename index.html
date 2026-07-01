@@ -202,6 +202,114 @@
             </div>
           </div>
         </article>
+
+        <!-- Project 03: Paperback -->
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-number">03</span>
+            <div class="project-tags">
+              <span class="tag">Android</span>
+              <span class="tag">Kotlin</span>
+              <span class="tag">Mobile Dev</span>
+            </div>
+          </div>
+          <h3 class="project-title">Paperback</h3>
+          <p class="project-subtitle">On-Device Audiobook Player</p>
+
+          <div class="project-body">
+            <div class="project-section">
+              <h4>The Challenge</h4>
+              <p>Most audiobook apps demand an account, cloud sync, or lock you into a single store. Listeners who
+                already own their <code>.m4b</code>/<code>.mp3</code> libraries just want a clean, private player that
+                works fully offline—with proper chapter support and the system media controls a real audio app should
+                have.</p>
+            </div>
+
+            <div class="project-section">
+              <h4>The Solution</h4>
+              <p>A 100% on-device audiobook player built in Kotlin and Jetpack Compose. Media3/ExoPlayer drives
+                playback through a <code>MediaSessionService</code>, so lock-screen, notification, Bluetooth and
+                Android Auto controls all work out of the box. A hand-written MP4 "box" parser reads chapters straight
+                from the file—no server, no companion app, no cloud sync.</p>
+            </div>
+
+            <div class="project-tech">
+              <h4>Technical Stack</h4>
+              <div class="tech-grid">
+                <span class="tech-item">Kotlin</span>
+                <span class="tech-item">Jetpack Compose</span>
+                <span class="tech-item">Media3 / ExoPlayer</span>
+                <span class="tech-item">Room</span>
+                <span class="tech-item">MediaSessionService</span>
+                <span class="tech-item">App Widgets</span>
+              </div>
+            </div>
+
+            <div class="project-achievements">
+              <h4>Key Achievements</h4>
+              <ul>
+                <li>Wrote a custom MP4 chapter parser from scratch (Nero <code>chpl</code> + QuickTime <code>chap</code>
+                  fallback) that reads only box headers—never the audio itself</li>
+                <li>Full background playback with system media controls, plus two home-screen widgets (Now Playing +
+                  scrollable Library)</li>
+                <li>Sleep timer (fixed or end-of-chapter), variable speed (0.5–3×), auto-rewind on resume, and per-book
+                  progress persisted locally with Room</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 04: Tilbud Finder -->
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-number">04</span>
+            <div class="project-tags">
+              <span class="tag">AI / LLM</span>
+              <span class="tag">Full-Stack</span>
+              <span class="tag">Web Scraping</span>
+            </div>
+          </div>
+          <h3 class="project-title">Tilbud Finder</h3>
+          <p class="project-subtitle">AI Meal Plans from Weekly Grocery Offers</p>
+
+          <div class="project-body">
+            <div class="project-section">
+              <h4>The Challenge</h4>
+              <p>The cheapest way to shop is to cook around whatever is on sale in the weekly <em>tilbudsavis</em>. But
+                cross-referencing offers across several Danish supermarket chains and turning them into actual meals is
+                tedious, manual work most people never bother with.</p>
+            </div>
+
+            <div class="project-section">
+              <h4>The Solution</h4>
+              <p>A full-stack web app that scrapes current offers from Danish chains (Føtex, Netto, MENY, Bilka) with
+                Puppeteer, filters them down to real food items, then feeds the discounted ingredients to a
+                locally-run LLM that generates budget-friendly recipes—all running privately on your own machine.</p>
+            </div>
+
+            <div class="project-tech">
+              <h4>Technical Stack</h4>
+              <div class="tech-grid">
+                <span class="tech-item">Node.js</span>
+                <span class="tech-item">Express</span>
+                <span class="tech-item">Puppeteer</span>
+                <span class="tech-item">Ollama (Llama 3.2)</span>
+                <span class="tech-item">Vanilla JS</span>
+              </div>
+            </div>
+
+            <div class="project-achievements">
+              <h4>Key Achievements</h4>
+              <ul>
+                <li>Built an automated scraping pipeline pulling live offers from four supermarket chains via
+                  eTilbudsavis</li>
+                <li>Local-first AI: recipes are generated on-device with Ollama—no API keys, no cloud, no data leaving
+                  the machine</li>
+                <li>Danish-language UI with per-store offer previews and one-click recipe generation</li>
+              </ul>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -343,7 +451,9 @@
             <h3>Development</h3>
             <div class="skill-items">
               <span class="skill-item">C# (Unity)</span>
+              <span class="skill-item">Kotlin</span>
               <span class="skill-item">Python</span>
+              <span class="skill-item">Node.js</span>
               <span class="skill-item">OpenCV</span>
               <span class="skill-item">Git</span>
             </div>

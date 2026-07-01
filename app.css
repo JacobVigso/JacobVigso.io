@@ -498,6 +498,16 @@ body {
   line-height: 1.8;
 }
 
+.project-body code {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.85em;
+  padding: 2px 7px;
+  background: rgba(233, 69, 96, 0.12);
+  border: 1px solid var(--glass-border);
+  border-radius: 6px;
+  color: var(--text-light);
+}
+
 .project-tech {
   margin-bottom: 25px;
 }
