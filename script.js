@@ -1,72 +1,252 @@
-// ========================
-// SMOOTH SCROLL NAVIGATION
-// ========================
+/* ============================================================
+   JACOB VIGSØ — PORTFOLIO MOTION SYSTEM
+   Vanilla JS + GSAP/ScrollTrigger + Lenis (all via CDN).
+   Everything degrades gracefully: no libs / reduced-motion /
+   touch devices all still get a fully usable static site.
+   ============================================================ */
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+(function () {
+  'use strict';
+
+  const root = document.documentElement;
+  const body = document.body;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+  const hasGSAP = typeof window.gsap !== 'undefined';
+  const hasST = hasGSAP && typeof window.ScrollTrigger !== 'undefined';
+  const hasLenis = typeof window.Lenis !== 'undefined';
+
+  if (hasST) gsap.registerPlugin(ScrollTrigger);
+
+  const lerp = (a, b, n) => a + (b - a) * n;
+
+  // ========================
+  // SMOOTH SCROLL (LENIS)
+  // ========================
+  let lenis = null;
+  if (hasLenis && !reduceMotion) {
+    lenis = new Lenis({ duration: 1.1, smoothWheel: true, wheelMultiplier: 1 });
+    window.__lenis = lenis;
+    const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); };
+    requestAnimationFrame(raf);
+    if (hasST) {
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.lagSmoothing(0);
     }
-  });
-});
-
-// ========================
-// SCROLL ANIMATIONS
-// ========================
-
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
-
-const fadeInObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, observerOptions);
-
-// Observe all sections and cards
-document.querySelectorAll('.about-section, .philosophy-card, .project-card, .skill-category, .contact-section').forEach(el => {
-  el.classList.add('fade-in');
-  fadeInObserver.observe(el);
-});
-
-// ========================
-// NAVBAR SCROLL EFFECT
-// ========================
-
-const nav = document.querySelector('.main-nav');
-let lastScroll = 0;
-
-window.addEventListener('scroll', () => {
-  const currentScroll = window.pageYOffset;
-
-  if (currentScroll > 100) {
-    nav.style.background = 'rgba(10, 10, 15, 0.95)';
-  } else {
-    nav.style.background = 'rgba(10, 10, 15, 0.85)';
   }
 
-  lastScroll = currentScroll;
-});
+  // ========================
+  // ANCHOR NAVIGATION
+  // ========================
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (!href || href.length < 2) return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      if (lenis) lenis.scrollTo(target, { offset: -10, duration: 1.2 });
+      else target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+    });
+  });
 
-// ========================
-// WEB DESIGN PROJECT SWITCHING
-// ========================
+  // ========================
+  // CUSTOM CURSOR
+  // ========================
+  if (!isTouch) {
+    const dot = document.querySelector('.cursor');
+    const ring = document.querySelector('.cursor-follower');
+    const ringLabel = ring ? ring.querySelector('span') : null;
 
-const projectTabs = document.querySelectorAll('.project-tab');
-const projectDisplay = document.getElementById('project-display');
+    if (dot && ring) {
+      body.classList.add('cursor-active');
+      let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+      let rx = mx, ry = my;
 
-// Project content templates
-const projectContent = {
-  visconti: `
+      window.addEventListener('mousemove', (e) => {
+        mx = e.clientX; my = e.clientY;
+        dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
+      });
+
+      const followRing = () => {
+        rx = lerp(rx, mx, 0.2);
+        ry = lerp(ry, my, 0.2);
+        ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
+        requestAnimationFrame(followRing);
+      };
+      followRing();
+
+      const hoverTargets = document.querySelectorAll('a, button, .project-tab, [data-magnetic], [data-cursor]');
+      hoverTargets.forEach((el) => {
+        el.addEventListener('mouseenter', () => {
+          const label = el.getAttribute('data-cursor');
+          if (label && ringLabel) {
+            ring.classList.add('is-label');
+            ringLabel.textContent = label;
+          } else {
+            ring.classList.add('is-hover');
+          }
+        });
+        el.addEventListener('mouseleave', () => {
+          ring.classList.remove('is-hover', 'is-label');
+          if (ringLabel) ringLabel.textContent = '';
+        });
+      });
+    }
+  }
+
+  // ========================
+  // MAGNETIC ELEMENTS
+  // ========================
+  if (!isTouch && !reduceMotion) {
+    document.querySelectorAll('[data-magnetic]').forEach((el) => {
+      const strength = el.classList.contains('nav-logo') ? 0.5 : 0.35;
+      el.addEventListener('mousemove', (e) => {
+        const r = el.getBoundingClientRect();
+        const x = e.clientX - (r.left + r.width / 2);
+        const y = e.clientY - (r.top + r.height / 2);
+        el.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
+      });
+      el.addEventListener('mouseleave', () => { el.style.transform = ''; });
+    });
+  }
+
+  // ========================
+  // KINETIC HERO TEXT (SPLIT)
+  // ========================
+  document.querySelectorAll('[data-split]').forEach((el) => {
+    const text = el.textContent;
+    el.textContent = '';
+    Array.from(text).forEach((ch) => {
+      const span = document.createElement('span');
+      span.className = 'char';
+      span.textContent = ch;
+      el.appendChild(span);
+    });
+  });
+  if (hasGSAP && !reduceMotion) {
+    gsap.set('.hero-title .char', { yPercent: 120, opacity: 0 });
+    gsap.set('.hero-badge, .hero-roles, .hero-description, .hero-cta, .hero-badge-spin', { y: 24, opacity: 0 });
+  }
+
+  function revealHero() {
+    const chars = document.querySelectorAll('.hero-title .char');
+    if (!hasGSAP || reduceMotion) {
+      chars.forEach((c) => { c.style.opacity = '1'; c.style.transform = 'none'; });
+      return;
+    }
+    gsap.to('.hero-title .char', { yPercent: 0, opacity: 1, stagger: 0.03, duration: 0.85, ease: 'power4.out' });
+    gsap.to('.hero-badge, .hero-roles, .hero-description, .hero-cta, .hero-badge-spin', {
+      y: 0, opacity: 1, stagger: 0.08, duration: 0.7, delay: 0.25, ease: 'power3.out'
+    });
+  }
+
+  // ========================
+  // ROLE ROTATOR
+  // ========================
+  (function roleRotator() {
+    const rot = document.getElementById('role-rotator');
+    if (!rot) return;
+    const items = Array.from(rot.querySelectorAll('span'));
+    if (items.length < 2) return;
+    let i = 0;
+    items.forEach((s, idx) => s.classList.toggle('active', idx === 0));
+    setInterval(() => {
+      items[i].classList.remove('active');
+      i = (i + 1) % items.length;
+      items[i].classList.add('active');
+    }, 2600);
+  })();
+
+  // ========================
+  // SCROLL REVEALS
+  // ========================
+  function initReveals() {
+    const els = gsap && gsap.utils ? gsap.utils.toArray('[data-reveal]') : Array.from(document.querySelectorAll('[data-reveal]'));
+    if (hasST && !reduceMotion) {
+      els.forEach((el) => {
+        gsap.to(el, {
+          opacity: 1, y: 0, duration: 0.9, ease: 'power3.out',
+          scrollTrigger: { trigger: el, start: 'top 88%' }
+        });
+      });
+    } else {
+      document.querySelectorAll('[data-reveal]').forEach((el) => {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      });
+    }
+  }
+
+  // ========================
+  // NAV BACKGROUND ON SCROLL
+  // ========================
+  (function navScroll() {
+    const nav = document.querySelector('.main-nav');
+    if (!nav) return;
+    const onScroll = () => {
+      if (window.scrollY > 60) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  // ========================
+  // INTRO SEQUENCE
+  // ========================
+  function runIntro() {
+    const intro = document.getElementById('intro');
+    const count = document.getElementById('intro-count');
+    let finished = false;
+
+    const finish = () => {
+      if (finished) return;
+      finished = true;
+      if (intro && intro.parentNode) intro.remove();
+      body.classList.remove('no-scroll');
+      if (lenis) lenis.start();
+      revealHero();
+      initReveals();
+      if (hasST) ScrollTrigger.refresh();
+    };
+
+    if (!intro || reduceMotion || !hasGSAP) {
+      finish();
+      return;
+    }
+
+    body.classList.add('no-scroll');
+    if (lenis) lenis.stop();
+
+    const counter = { v: 0 };
+    gsap.timeline({ onComplete: finish })
+      .to(counter, {
+        v: 100, duration: 1.4, ease: 'power2.inOut',
+        onUpdate: () => { if (count) count.textContent = String(Math.round(counter.v)).padStart(2, '0'); }
+      })
+      .to('.intro__word span', { yPercent: -115, duration: 0.7, ease: 'power3.inOut' }, '-=0.25')
+      .to(intro, { yPercent: -100, duration: 0.8, ease: 'power3.inOut' }, '-=0.35');
+
+    // Safety net: if rAF is throttled (page loaded in a background tab), never trap the page.
+    setTimeout(finish, 4500);
+  }
+
+  // ========================
+  // WEB DESIGN PROJECT SWITCHING
+  // ========================
+  const projectTabs = document.querySelectorAll('.project-tab');
+  const projectDisplay = document.getElementById('project-display');
+  const browserUrl = document.getElementById('browser-url');
+
+  const projectUrls = {
+    visconti: 'visconti.com',
+    vast: 'vastfestival.dk',
+    blog: 'wanderlust.blog'
+  };
+
+  const projectContent = {
+    visconti: `
     <div class="visconti-demo">
       <nav class="visconti-nav">
         <div class="visconti-logo">Visconti</div>
@@ -81,7 +261,7 @@ const projectContent = {
           <span class="cart-count">0</span>
         </div>
       </nav>
-      
+
       <div class="visconti-hero">
         <img src="Images/beauty-background.jpg" alt="Luxury Beauty">
         <div class="visconti-hero-overlay">
@@ -92,12 +272,12 @@ const projectContent = {
           </div>
         </div>
       </div>
-      
+
       <div class="visconti-section-title">
         <h2>Bestsellers</h2>
         <p>Our most loved products, chosen by you</p>
       </div>
-      
+
       <div class="visconti-products">
         <div class="visconti-product">
           <img src="Images/Products/product (1).jpg" alt="Radiant Glow Serum">
@@ -132,7 +312,7 @@ const projectContent = {
           </div>
         </div>
       </div>
-      
+
       <div class="visconti-reviews">
         <h2>What They're Saying</h2>
         <div class="visconti-reviews-grid">
@@ -153,12 +333,12 @@ const projectContent = {
           </div>
         </div>
       </div>
-      
+
       <div id="popup-message">Added to your bag</div>
     </div>
   `,
 
-  vast: `
+    vast: `
     <div class="vast-demo">
       <div class="vast-hero">
         <div class="vast-hero-content">
@@ -167,7 +347,7 @@ const projectContent = {
           <div class="vast-date">June 21-24, 2024</div>
         </div>
       </div>
-      
+
       <div class="vast-lineup">
         <h2>Featured Artists</h2>
         <div class="vast-artists">
@@ -194,7 +374,7 @@ const projectContent = {
           </div>
         </div>
       </div>
-      
+
       <div class="vast-cta">
         <h3>Ready to experience VAST?</h3>
         <button class="vast-cta-btn">Get Your Pass</button>
@@ -202,7 +382,7 @@ const projectContent = {
     </div>
   `,
 
-  blog: `
+    blog: `
     <div class="blog-demo">
       <div class="blog-hero">
         <img src="Images/header-Blog.jpg" alt="Travel Adventure">
@@ -215,7 +395,7 @@ const projectContent = {
           </div>
         </div>
       </div>
-      
+
       <div class="blog-articles">
         <h2>Recent Stories</h2>
         <div class="blog-grid">
@@ -239,7 +419,7 @@ const projectContent = {
           </div>
         </div>
       </div>
-      
+
       <div class="blog-destinations">
         <h2>Dream Destinations</h2>
         <div class="blog-dest-grid">
@@ -263,110 +443,74 @@ const projectContent = {
       </div>
     </div>
   `
-};
+  };
 
-// Switch project with smooth transition
-function switchProject(projectId) {
-  // Update active tab
-  projectTabs.forEach(tab => {
-    tab.classList.remove('active');
-    if (tab.dataset.project === projectId) {
-      tab.classList.add('active');
-    }
-  });
-
-  // Fade out current content
-  projectDisplay.style.opacity = '0';
-  projectDisplay.style.transform = 'translateY(30px)';
-
-  setTimeout(() => {
-    // Update content
-    projectDisplay.innerHTML = projectContent[projectId];
-
-    // Fade in new content
-    requestAnimationFrame(() => {
-      projectDisplay.style.opacity = '1';
-      projectDisplay.style.transform = 'translateY(0)';
+  function switchProject(projectId) {
+    projectTabs.forEach((tab) => {
+      tab.classList.toggle('active', tab.dataset.project === projectId);
     });
 
-    // Reinitialize components
-    if (projectId === 'visconti') {
-      initCartCount();
-    }
-  }, 350);
-}
+    if (!projectDisplay) return;
+    projectDisplay.style.opacity = '0';
+    projectDisplay.style.transform = 'translateY(20px)';
 
-// Add click handlers to tabs
-projectTabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    const projectId = tab.dataset.project;
-    switchProject(projectId);
+    setTimeout(() => {
+      projectDisplay.innerHTML = projectContent[projectId];
+      if (browserUrl && projectUrls[projectId]) browserUrl.textContent = projectUrls[projectId];
+      projectDisplay.scrollTop = 0;
+
+      requestAnimationFrame(() => {
+        projectDisplay.style.opacity = '1';
+        projectDisplay.style.transform = 'translateY(0)';
+      });
+
+      if (projectId === 'visconti') initCartCount();
+      if (hasST) ScrollTrigger.refresh();
+    }, 320);
+  }
+
+  projectTabs.forEach((tab) => {
+    tab.addEventListener('click', () => switchProject(tab.dataset.project));
   });
-});
 
-// Add transition styles to project display
-if (projectDisplay) {
-  projectDisplay.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
-}
+  // ========================
+  // CART (VISCONTI DEMO)
+  // ========================
+  function initCartCount() {
+    const addToCartButtons = document.getElementsByClassName('add-to-cart');
+    const cartCountTag = document.querySelector('.cart-count');
+    const popupMessage = document.getElementById('popup-message');
+    if (!cartCountTag) return;
 
-// ========================
-// CART FUNCTIONALITY
-// ========================
+    let cartCount = parseInt(localStorage.getItem('cartCount')) || 0;
+    cartCountTag.textContent = cartCount;
 
-function initCartCount() {
-  const addToCartButtons = document.getElementsByClassName('add-to-cart');
-  const cartCountTag = document.querySelector('.cart-count');
-  const popupMessage = document.getElementById('popup-message');
+    for (let i = 0; i < addToCartButtons.length; i++) {
+      addToCartButtons[i].addEventListener('click', () => {
+        cartCount++;
+        cartCountTag.textContent = cartCount;
+        localStorage.setItem('cartCount', cartCount);
 
-  if (!cartCountTag) return;
+        if (popupMessage) {
+          popupMessage.classList.add('show');
+          setTimeout(() => popupMessage.classList.remove('show'), 2000);
+        }
 
-  let cartCount = parseInt(localStorage.getItem('cartCount')) || 0;
-  cartCountTag.textContent = cartCount;
-
-  for (let i = 0; i < addToCartButtons.length; i++) {
-    addToCartButtons[i].addEventListener('click', () => {
-      cartCount++;
-      cartCountTag.textContent = cartCount;
-      localStorage.setItem('cartCount', cartCount);
-
-      if (popupMessage) {
-        popupMessage.classList.add('show');
-        setTimeout(() => {
-          popupMessage.classList.remove('show');
-        }, 2000);
-      }
-
-      addToCartButtons[i].classList.add('clicked');
-      setTimeout(() => {
-        addToCartButtons[i].classList.remove('clicked');
-      }, 500);
-    });
+        addToCartButtons[i].classList.add('clicked');
+        setTimeout(() => addToCartButtons[i].classList.remove('clicked'), 500);
+      });
+    }
   }
-}
 
-// ========================
-// ADD CSS FOR ANIMATIONS
-// ========================
+  // ========================
+  // INIT
+  // ========================
+  window.addEventListener('load', () => {
+    if (hasST) ScrollTrigger.refresh();
+  });
 
-const style = document.createElement('style');
-style.textContent = `
-  .fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-document.head.appendChild(style);
+  document.addEventListener('DOMContentLoaded', initCartCount);
 
-// ========================
-// INITIALIZATION
-// ========================
-
-document.addEventListener('DOMContentLoaded', function () {
-  initCartCount();
-});
+  // Kick off (DOM is already parsed — script.js is at end of <body>)
+  runIntro();
+})();

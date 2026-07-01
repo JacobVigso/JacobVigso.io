@@ -1,0 +1,764 @@
+/* ============================================================
+   WEB DESIGN SHOWCASE — DEMO INTERNALS
+   Self-contained styles for the Visconti / VAST / Wanderlust
+   mini-sites. Each intentionally has its own brand look, so
+   these are kept separate from the portfolio's design system
+   (app.css). The redesign re-frames these demos (pills +
+   browser window) but leaves their internals intact.
+   ============================================================ */
+
+/* ========================
+   VISCONTI - LUXURY BEAUTY
+   ======================== */
+
+.visconti-demo {
+  background: linear-gradient(180deg, #faf9f7 0%, #f5f3f0 100%);
+  min-height: 100vh;
+  font-family: 'Playfair Display', serif;
+}
+
+.visconti-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 60px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.visconti-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}
+
+.visconti-nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.visconti-nav-links a {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+  font-weight: 400;
+}
+
+.visconti-nav-links a:hover {
+  color: #1a1a1a;
+}
+
+.visconti-cart {
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  position: relative;
+  cursor: pointer;
+}
+
+.visconti-cart .cart-count {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background: #c9a87c;
+  color: #fff;
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+}
+
+.visconti-hero {
+  position: relative;
+  height: 75vh;
+  overflow: hidden;
+}
+
+.visconti-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.visconti-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 100%);
+  display: flex;
+  align-items: center;
+  padding-left: 100px;
+}
+
+.visconti-hero-content {
+  color: #fff;
+  max-width: 500px;
+}
+
+.visconti-hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 500;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.visconti-hero-content p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  opacity: 0.9;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.visconti-btn {
+  display: inline-block;
+  background: #c9a87c;
+  color: #fff;
+  padding: 18px 45px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.visconti-btn:hover {
+  background: #b8956b;
+  transform: translateY(-2px);
+}
+
+.visconti-section-title {
+  text-align: center;
+  padding: 80px 20px 50px;
+}
+
+.visconti-section-title h2 {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+}
+
+.visconti-section-title p {
+  font-family: 'Inter', sans-serif;
+  color: #888;
+  font-size: 0.95rem;
+  font-weight: 300;
+}
+
+.visconti-products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px 100px;
+}
+
+.visconti-product {
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.visconti-product:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+}
+
+.visconti-product img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.visconti-product:hover img {
+  transform: scale(1.05);
+}
+
+.visconti-product-info {
+  padding: 25px;
+  text-align: center;
+}
+
+.visconti-product-info h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.visconti-product-info .price {
+  font-family: 'Inter', sans-serif;
+  color: #c9a87c;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.visconti-product .add-to-cart {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  opacity: 0;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.visconti-product:hover .add-to-cart {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.visconti-reviews {
+  background: #fff;
+  padding: 100px 60px;
+}
+
+.visconti-reviews h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 60px;
+}
+
+.visconti-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.visconti-review {
+  text-align: center;
+  padding: 40px;
+  background: #faf9f7;
+}
+
+.visconti-review img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.visconti-review p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.visconti-review h4 {
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+/* ========================
+   VAST - FESTIVAL
+   ======================== */
+
+.vast-demo {
+  background: #0a0a0a;
+  min-height: 100vh;
+  font-family: 'Space Grotesk', sans-serif;
+  color: #fff;
+  overflow: hidden;
+}
+
+.vast-hero {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url('Images/party-back.jpeg') center/cover no-repeat;
+}
+
+.vast-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.vast-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    repeating-linear-gradient(90deg, transparent 0px, transparent 100px, rgba(255, 255, 255, 0.02) 100px, rgba(255, 255, 255, 0.02) 101px),
+    repeating-linear-gradient(0deg, transparent 0px, transparent 100px, rgba(255, 255, 255, 0.02) 100px, rgba(255, 255, 255, 0.02) 101px);
+}
+
+.vast-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 0 40px;
+}
+
+.vast-logo {
+  font-size: 8rem;
+  font-weight: 700;
+  letter-spacing: 20px;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #ff6b6b 0%, #feca57 25%, #48dbfb 50%, #ff9ff3 75%, #ff6b6b 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientFlow 4s linear infinite;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.vast-tagline {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.vast-date {
+  display: inline-block;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 15px 40px;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  color: #fff;
+}
+
+.vast-lineup {
+  padding: 100px 40px;
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 100%);
+}
+
+.vast-lineup h2 {
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 60px;
+}
+
+.vast-artists {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.vast-artist {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 3/4;
+}
+
+.vast-artist img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: grayscale(30%);
+}
+
+.vast-artist:hover img {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+
+.vast-artist-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px 30px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
+  transform: translateY(20px);
+  opacity: 0.8;
+  transition: all 0.4s ease;
+}
+
+.vast-artist:hover .vast-artist-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.vast-artist-overlay h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.vast-artist-overlay p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+}
+
+.vast-cta {
+  text-align: center;
+  padding: 80px 40px;
+  background: #0a0a0a;
+}
+
+.vast-cta h3 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.vast-cta-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+  color: #000;
+  padding: 20px 60px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.vast-cta-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(255, 107, 107, 0.3);
+}
+
+/* ========================
+   BLOG - TRAVEL WANDERLUST
+   ======================== */
+
+.blog-demo {
+  background: #fefefe;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: #2d3436;
+}
+
+.blog-hero {
+  position: relative;
+  height: 85vh;
+  overflow: hidden;
+}
+
+.blog-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.blog-hero-content {
+  max-width: 700px;
+  color: #fff;
+}
+
+.blog-category {
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+}
+
+.blog-hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.blog-hero-content p {
+  font-size: 1.1rem;
+  font-weight: 300;
+  opacity: 0.9;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.blog-read-btn {
+  display: inline-block;
+  background: #fff;
+  color: #2d3436;
+  padding: 16px 40px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.blog-read-btn:hover {
+  background: #2d3436;
+  color: #fff;
+}
+
+.blog-articles {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 40px;
+}
+
+.blog-articles h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 60px;
+  color: #2d3436;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.blog-article {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+  padding: 30px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.blog-article:nth-child(even) {
+  direction: rtl;
+}
+
+.blog-article:nth-child(even)>* {
+  direction: ltr;
+}
+
+.blog-article-img {
+  overflow: hidden;
+}
+
+.blog-article-img img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.blog-article:hover .blog-article-img img {
+  transform: scale(1.05);
+}
+
+.blog-article-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #2d3436;
+}
+
+.blog-article-content p {
+  font-size: 0.95rem;
+  color: #636e72;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.blog-destinations {
+  background: linear-gradient(135deg, #74b9ff 0%, #a29bfe 100%);
+  padding: 100px 40px;
+}
+
+.blog-destinations h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 60px;
+}
+
+.blog-dest-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blog-dest {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.blog-dest:hover {
+  transform: translateY(-10px);
+}
+
+.blog-dest h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: #2d3436;
+  margin-bottom: 10px;
+}
+
+.blog-dest p {
+  font-size: 0.85rem;
+  color: #636e72;
+  line-height: 1.6;
+}
+
+/* ========================
+   DEMO RESPONSIVE
+   ======================== */
+
+@media only screen and (max-width: 1024px) {
+  .visconti-products {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 40px 80px;
+  }
+
+  .vast-artists {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-article {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .blog-dest-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .visconti-nav {
+    padding: 20px 30px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .visconti-hero-overlay {
+    padding: 40px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .visconti-hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .visconti-products {
+    grid-template-columns: 1fr;
+    padding: 0 20px 60px;
+  }
+
+  .visconti-reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vast-logo {
+    font-size: 4rem;
+    letter-spacing: 10px;
+  }
+
+  .vast-artists {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .blog-article {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .blog-article:nth-child(even) {
+    direction: ltr;
+  }
+
+  .blog-dest-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .vast-logo {
+    font-size: 2.8rem;
+    letter-spacing: 5px;
+  }
+
+  .visconti-hero-content h1 {
+    font-size: 1.8rem;
+  }
+}
