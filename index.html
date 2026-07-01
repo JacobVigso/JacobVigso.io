@@ -271,6 +271,10 @@
           </div>
           <h3 class="project-title">Tilbud Finder</h3>
           <p class="project-subtitle">AI Meal Plans from Weekly Grocery Offers</p>
+          <a href="https://tilbudsside.netlify.app/" class="project-link" target="_blank" rel="noopener">
+            <i class='bx bx-link-external'></i>
+            <span>View Live Site</span>
+          </a>
 
           <div class="project-body">
             <div class="project-section">
@@ -284,7 +288,8 @@
               <h4>The Solution</h4>
               <p>A full-stack web app that scrapes current offers from Danish chains (Føtex, Netto, MENY, Bilka) with
                 Puppeteer, filters them down to real food items, then feeds the discounted ingredients to a
-                locally-run LLM that generates budget-friendly recipes—all running privately on your own machine.</p>
+                locally-run LLM (Ollama / Llama 3.2) that generates budget-friendly recipes. The scrape-and-generate
+                pipeline runs locally with no paid APIs; the finished recipes ship as a fast static site.</p>
             </div>
 
             <div class="project-tech">
@@ -295,6 +300,7 @@
                 <span class="tech-item">Puppeteer</span>
                 <span class="tech-item">Ollama (Llama 3.2)</span>
                 <span class="tech-item">Vanilla JS</span>
+                <span class="tech-item">Netlify</span>
               </div>
             </div>
 
@@ -303,8 +309,8 @@
               <ul>
                 <li>Built an automated scraping pipeline pulling live offers from four supermarket chains via
                   eTilbudsavis</li>
-                <li>Local-first AI: recipes are generated on-device with Ollama—no API keys, no cloud, no data leaving
-                  the machine</li>
+                <li>Free, self-hosted AI: recipes are generated locally with Ollama (Llama 3.2)—no paid API keys—then
+                  published as static JSON</li>
                 <li>Danish-language UI with per-store offer previews and one-click recipe generation</li>
               </ul>
             </div>
